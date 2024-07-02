@@ -55,6 +55,31 @@ services:
 
 
 
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "22181:2181"
+    networks:
+      - microservices-net
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: ms_kafka
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
 
   mail-dev:
     container_name: ms-mail-dev
@@ -71,3 +96,28 @@ volumes:
   postgres:
   pgadmin:
   mongo:
+
+
+# O fator de replicação para o tópico de offsets do Kafka.
+# Isso define quantas cópias de cada mensagem são armazenadas em diferentes brokers para redundância.
+#KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+# O fator de replicação para o log de estado de transação do Kafka.
+# Isso define quantas cópias do log de estado de transação são armazenadas em diferentes brokers para redundância.
+#KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+# O número mínimo de réplicas ISR que devem confirmar uma gravação para que ela seja considerada bem-sucedida.
+# ISR significa réplicas em sincronia, que são as réplicas que estão atualmente vivas e em sincronia com o líder.
+#KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+
+# A string de conexão para o ZooKeeper.
+# O Kafka usa o ZooKeeper para gerenciar e coordenar os brokers.
+#KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+# O mapeamento entre os nomes dos listeners e os protocolos de segurança.
+# Isso define quais protocolos de segurança são usados para cada listener.
+#KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+
+# A lista de endereços e portas que o broker Kafka anuncia aos produtores e consumidores.
+# Isso define onde os produtores e consumidores podem se conectar para enviar e receber mensagens.
+#KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
