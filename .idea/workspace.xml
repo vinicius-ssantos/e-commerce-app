@@ -4,25 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdf0f2f0-81a3-43d4-9ab2-91c0e67df225" name="Changes" comment="implementing customer service">
-      <change afterPath="$PROJECT_DIR$/services/config-server/src/main/resources/configurations/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/config-server/src/main/resources/configurations/product-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/category/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/exception/ProductPurchaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/handler/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/ProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/ProductPurchaseRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/ProductPurchaseResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/ProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/ProductResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/java/com/viniciussantos/ecommerce/product/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/resources/db/migration/V1__init_database.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product/src/main/resources/db/migration/V2__insert_data.sql" afterDir="false" />
+    <list default="true" id="fdf0f2f0-81a3-43d4-9ab2-91c0e67df225" name="Changes" comment="Produce and send order Confirmation">
+      <change afterPath="$PROJECT_DIR$/services/config-server/src/main/resources/configurations/notification-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/config-server/src/main/resources/configurations/payment-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/NotificationApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/email/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/email/EmailTemplates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/kafka/NotificationConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/kafka/order/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/kafka/order/OrderConfirmation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/kafka/order/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/kafka/payment/PaymentConfirmation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/kafka/payment/PaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/notification/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/notification/NotificationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/java/com/viniciussantos/ecommerce/notification/NotificationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/resources/templates/order-confirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/main/resources/templates/payment-confirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/notification/src/test/java/com/viniciussantos/ecommerce/NotificationApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/order/src/main/java/com/viniciussantos/ecommerce/order/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/configuration/KafkaPaymentTopicConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/handler/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/notification/NotificationProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/notification/PaymentNotificationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/payment/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/payment/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/payment/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/payment/PaymentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/payment/PaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/payment/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/payment/PaymentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/payment/src/main/java/com/viniciussantos/ecommerce/payment/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +58,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -97,7 +124,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vinic/IntellijProjects/ProjetoMicroservices-full/meuProjetoMicroservice-full-code/e-commerce-app/services/product/src/main/resources/db/migration",
+    "last_opened_file_path": "C:/Users/vinic/IntellijProjects/ProjetoMicroservices-full/meuProjetoMicroservice-full-code/e-commerce-app/services/config-server/src/main/resources/configurations",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -121,20 +148,26 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="viniciussantos.ecommerce.handler" />
-      <recent name="viniciussantos.ecommerce.customer" />
+      <recent name="com.viniciussantos.ecommerce.kafka.order" />
+      <recent name="com.viniciussantos.ecommerce.kafka.payment" />
+      <recent name="com.viniciussantos.ecommerce.kafka.payment.PaymentNotification" />
+      <recent name="com.viniciussantos.ecommerce.notification.kafka.payment.PaymentNotification" />
+      <recent name="com.viniciussantos.ecommerce.kafka.order.OrderNotification" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\product\src\main\resources\db\migration" />
-      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\product\src\main\java\com\viniciussantos\ecommerce\product" />
-      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\product\src\main\java\com\viniciussantos\ecommerce" />
-      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\customer\src\main\java\viniciussantos\ecommerce\customer" />
-      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\config-server\src\main\resources" />
+      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\config-server\src\main\resources\configurations" />
+      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\notification\src\main\resources" />
+      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\payment\src\main\java\com\viniciussantos\ecommerce" />
+      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\order\src\main\java\com\viniciussantos\ecommerce\payment" />
+      <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services\order\src\main\java\com\viniciussantos\ecommerce\product" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\vinic\IntellijProjects\ProjetoMicroservices-full\meuProjetoMicroservice-full-code\e-commerce-app\services" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.viniciussantos.ecommerce.email" />
+      <recent name="com.viniciussantos.ecommerce.notification" />
+      <recent name="com.viniciussantos.ecommerce.order" />
       <recent name="com.viniciussantos.ecommerce.product" />
     </key>
   </component>
@@ -169,6 +202,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NotificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="notification" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.viniciussantos.ecommerce.NotificationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.viniciussantos.ecommerce.OrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="payment" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.viniciussantos.ecommerce.PaymentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="product" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.viniciussantos.ecommerce.ProductApplication" />
@@ -177,6 +231,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.NotificationApplication" />
+      <item itemvalue="Spring Boot.PaymentApplication" />
+      <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.ProductApplication" />
       <item itemvalue="Spring Boot.CustomerApplication" />
       <item itemvalue="Spring Boot.DiscoveryApplication" />
@@ -206,7 +263,8 @@
       <workItem from="1719792971831" duration="826000" />
       <workItem from="1719793818088" duration="600000" />
       <workItem from="1719794665704" duration="9133000" />
-      <workItem from="1719856063610" duration="6073000" />
+      <workItem from="1719856063610" duration="15109000" />
+      <workItem from="1720035411637" duration="8841000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -224,7 +282,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719857923996</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implementing Product service">
+      <option name="closed" value="true" />
+      <created>1719870148373</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719870148373</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Produce and send order Confirmation">
+      <option name="closed" value="true" />
+      <created>1719879729227</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719879729227</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +308,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="implementing customer service" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementing customer service" />
+    <MESSAGE value="implementing Product service" />
+    <MESSAGE value="Produce and send order Confirmation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Produce and send order Confirmation" />
   </component>
 </project>
