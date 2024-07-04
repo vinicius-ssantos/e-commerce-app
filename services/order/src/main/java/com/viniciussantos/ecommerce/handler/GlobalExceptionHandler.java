@@ -1,6 +1,6 @@
 package com.viniciussantos.ecommerce.handler;
 
-import com.alibou.ecommerce.exception.BusinessException;
+import com.viniciussantos.ecommerce.exception.BusinessException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
