@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdf0f2f0-81a3-43d4-9ab2-91c0e67df225" name="Changes" comment="Implementando notification e payment microservices">
-      <change afterPath="$PROJECT_DIR$/services/config-server/src/main/resources/configurations/gateway-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/viniciussantos/gateway/GatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/src/test/java/com/viniciussantos/gateway/GatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fdf0f2f0-81a3-43d4-9ab2-91c0e67df225" name="Changes" comment="...">
+      <change afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/viniciussantos/gateway/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/110a8329-eae4-4918-824a-02949edf0e76/storage_v2/_src_/database/product.78yN7Q/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/110a8329-eae4-4918-824a-02949edf0e76/storage_v2/_src_/database/product.78yN7Q/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/110a8329-eae4-4918-824a-02949edf0e76/storage_v2/_src_/database/product.78yN7Q/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/110a8329-eae4-4918-824a-02949edf0e76/storage_v2/_src_/database/product.78yN7Q/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/110a8329-eae4-4918-824a-02949edf0e76/storage_v2/_src_/database/product.78yN7Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/110a8329-eae4-4918-824a-02949edf0e76/storage_v2/_src_/database/product.78yN7Q/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/order/src/main/java/com/viniciussantos/ecommerce/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/order/src/main/java/com/viniciussantos/ecommerce/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +45,9 @@
     &quot;accountId&quot;: &quot;0d559d51-ff90-4c99-b9e8-15aa7cbb3513&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/services/gateway/src/main/java/com/viniciussantos/gateway/security/SecurityConfig.java" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -61,6 +58,9 @@
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -81,6 +81,8 @@
     "Application.ConfigServerApplication.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "Docker.docker-compose.yml.kafka: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.keycloak: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.zipkin: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.zookeeper: Compose Deployment.executor": "Run",
     "Maven.config-server [clean].executor": "Run",
     "Maven.config-server [validate].executor": "Run",
@@ -94,8 +96,10 @@
     "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.CustomerApplication.executor": "Run",
     "Spring Boot.DiscoveryApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
     "Spring Boot.NotificationApplication.executor": "Run",
     "Spring Boot.OrderApplication.executor": "Run",
+    "Spring Boot.PaymentApplication.executor": "Run",
     "Spring Boot.ProductApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -156,7 +160,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.kafka: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.viniciussantos.configserver.ConfigServerApplication" />
@@ -230,6 +234,32 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.keycloak: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="keycloak" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.zipkin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="zipkin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yml.zookeeper: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -245,6 +275,8 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml.kafka: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.keycloak: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.zipkin: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.zookeeper: Compose Deployment" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.NotificationApplication" />
@@ -257,6 +289,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.keycloak: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.zipkin: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.kafka: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.zookeeper: Compose Deployment" />
       </list>
@@ -286,7 +320,7 @@
       <workItem from="1719793818088" duration="600000" />
       <workItem from="1719794665704" duration="9133000" />
       <workItem from="1719856063610" duration="15109000" />
-      <workItem from="1720035411637" duration="11564000" />
+      <workItem from="1720035411637" duration="17053000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -328,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720046795088</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="...">
+      <option name="closed" value="true" />
+      <created>1720053218981</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720053218981</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +383,7 @@
     <MESSAGE value="implementing Product service" />
     <MESSAGE value="Produce and send order Confirmation" />
     <MESSAGE value="Implementando notification e payment microservices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementando notification e payment microservices" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
